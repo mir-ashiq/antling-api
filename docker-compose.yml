@@ -1,0 +1,28 @@
+# ═══════════════════════════════════════════════════════
+# ant-ling Chat API — Docker Compose
+# ═══════════════════════════════════════════════════════
+#
+# Quick start:
+#   docker compose up --build
+#
+# Then test:
+#   curl http://localhost:8000/health
+#   curl http://localhost:8000/v1/models
+
+services:
+  antling-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      # Standalone mode (mock responses) — no upstream needed
+      - ANTLING_BASE_URL=
+      - ANTLING_TENANT_ID=20260523LTJY01501627
+      - ANTLING_API_KEY=sk-no-key-required
+      - OPENAI_API_KEY=sk-no-key-required
+      - ANTHROPIC_API_KEY=sk-no-key-required
+    env_file:
+      - .env   # optional — overrides above if present
+    restart: unless-stopped

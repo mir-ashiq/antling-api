@@ -1,0 +1,52 @@
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+*.db
+*.sqlite
+ruvector.db
+network-intercept-har.txt
+
+# Tests & examples (not needed in production image)
+run_tests.py
+client_example.py
+test_endpoints.py
+analyze_*.py
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Docs
+LICENSE
+*.md
+!README.md

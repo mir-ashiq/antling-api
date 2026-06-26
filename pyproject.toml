@@ -1,0 +1,23 @@
+[project]
+name = "antling-api"
+version = "1.0.0"
+description = "Reverse-engineered Python API for chat.ant-ling.com — OpenAI & Anthropic compatible"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "openai>=1.30.0",
+    "anthropic>=0.30.0",
+]
+
+[tool.uvicorn]
+app = "antling_api.server:app"
+host = "0.0.0.0"
+port = 8000
